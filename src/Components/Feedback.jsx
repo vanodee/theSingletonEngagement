@@ -11,7 +11,7 @@ import FeedbackForm2 from './FeedbackForm2'
 //ANIMATION VARIANTS -------------------------------//
 const goodbyeTextMations = {
   hidden: {
-    y: "-50vh",
+    y: "-50dvh",
     opacity: 0,
   },
   visible: {
@@ -76,7 +76,7 @@ const feedbackMations = {
 export default function Feedback() {
   return (
     <Box
-      h="100vh"
+      h="100dvh"
       bgImg={FeedbackBg}
       bgSize="cover"
       display="flex"

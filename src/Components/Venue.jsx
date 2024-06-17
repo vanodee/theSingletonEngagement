@@ -8,7 +8,7 @@ import { motion, spring } from 'framer-motion'
 //ANIMATION VARIANTS -------------------------------//
 const welcomeTextMations = {
   hidden: {
-    y: "50vh",
+    y: "50dvh",
   },
   visible: {
     y: 0,
@@ -52,7 +52,7 @@ const mapMations = {
 export default function Venue() {
   return (
     <Box
-      h="100vh"
+      h="100dvh"
       w="100%"
       bg="white"
       display="flex"

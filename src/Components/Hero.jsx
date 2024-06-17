@@ -71,7 +71,7 @@ const bottleMations = {
 export default function Hero() {
   return (
     <Box
-      h="100vh"
+      h="100dvh"
       bgImg={HeroImage}
       bgSize="cover"
       display="flex"
