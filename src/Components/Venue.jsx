@@ -1,5 +1,6 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import WelcomeText from "../assets/welcome.webp"
+import MapImage from "../assets/venueMap.webp"
 import { motion, spring } from 'framer-motion'
 
 
@@ -82,16 +83,35 @@ export default function Venue() {
       <Box
         as={motion.div}
         h="80%"
-        w="100%"
+        w="90%"
         maxW="1200px"
-        borderRadius="2rem"
-        bg="red"
+        borderRadius="1rem"
+        overflow="hidden"
+        // bg="red"
 
         //ANIMATIONS
         variants={mapMations}
         initial="hidden"
         whileInView="visible"
       >
+        <Image
+          src={MapImage}
+          alt='Venue Map'
+          w="100%"
+          h="100%"
+          objectFit="cover"
+        />
+
+        <Box
+          h="100%"
+          w="100%"
+          position="relative"
+          transform="translate(0, -100%)"
+
+          bg="rgba(0,0,0,0.1)"
+        >
+          {/* hello */}
+        </Box>
 
       </Box>
 

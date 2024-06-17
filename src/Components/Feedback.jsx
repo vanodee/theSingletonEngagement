@@ -3,6 +3,8 @@ import FeedbackBg from "../assets/singleton_set_image.webp"
 import GoodbyeTxt from "../assets/seeYouSoon.webp"
 import SingletonLogo from "../assets/singleton_logo.webp"
 import { motion, spring } from 'framer-motion'
+import FeedbackForm from './FeedbackForm'
+import FeedbackForm2 from './FeedbackForm2'
 
 
 
@@ -47,7 +49,27 @@ const footerMations = {
     }
   }
 }
+
+const feedbackMations = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    zIndex: 1,
+
+    transition: {
+      delay: 0.7,
+      duration: 0.5,
+      type: spring,
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001
+    }
+  }
+}
 //END OF ANIMATION VARIANTS ------------------------//
+
 
 
 
@@ -78,19 +100,27 @@ export default function Feedback() {
         <Image
           src={GoodbyeTxt}
           alt='See You Soon'
-          w="40vw"
+          w={{base: "70vw", md:"40vw"}}
         />
       </Box>
 
       <Box
+        as={motion.div}
         display="flex"
         alignItems="center"
         justifyContent="center"
         h="80%"
-        px="20vw"
+        w="90%"
+        maxW="600px"
         // bg="blue"
+
+        //ANIMATIONS
+        variants={feedbackMations}
+        initial="hidden"
+        whileInView="visible"
       >
-        <Text>Feedback Form</Text>
+        {/* <FeedbackForm /> */}
+        <FeedbackForm2 />
       </Box>
 
       <Box

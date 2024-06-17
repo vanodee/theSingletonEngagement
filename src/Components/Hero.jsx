@@ -122,7 +122,7 @@ export default function Hero() {
           backdropFilter='auto'
           backdropBlur='30px'
           borderRadius="1rem"
-          p="2rem"
+          p={{base:"1rem", md:"2rem"}}
           alignItems="left"
           color="white"
           justifyContent="space-between"
