@@ -6,9 +6,10 @@ import { Box } from "@chakra-ui/react";
 export default function Home() {
   return (
       <Box
-          h="100vh"
-          overflowY="scroll"
-          scrollSnapType="y mandatory"
+        h="100vh"
+        overflowY="scroll"
+        overflowX="hidden"
+        scrollSnapType="y mandatory"
       >
         <Hero />
         <Venue />

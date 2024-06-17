@@ -4,9 +4,9 @@ import Header from '../Components/Header'
 
 export default function RootLayout() {
   return (
-      <>
-          <Header/>
-        <Outlet />
+    <>
+      <Header />
+      <Outlet />
     </>
   )
 }

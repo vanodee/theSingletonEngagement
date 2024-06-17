@@ -7,15 +7,15 @@ import App from './App.jsx'
 // Custom Styles ------------------------ //
 const colors = {
   primary: {
-    1: '#527555',
+    1: '#335C69',
     2: ''
   },
 
 }
 
 const fonts = {
-  body: `'Chakra Petch', sans-serif`,
-  heading: `'Chakra Petch', sans-serif`
+  body: `'Montserrat', sans-serif`,
+  heading: `'Montserrat', sans-serif`
 }
 
 const breakpoints = {
