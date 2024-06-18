@@ -11,7 +11,7 @@ import FeedbackForm2 from './FeedbackForm2'
 //ANIMATION VARIANTS -------------------------------//
 const goodbyeTextMations = {
   hidden: {
-    y: "-50dvh",
+    y: "-60%",
     opacity: 0,
   },
   visible: {
