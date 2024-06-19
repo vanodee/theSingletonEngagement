@@ -15,7 +15,7 @@ import { useState } from 'react'
 
 
 
-export default function FeedbackForm2() {
+export default function CocktailForm({ setShowForm }) {
 
     const [formWasSubmitted, setFormWasSubmitted] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +30,7 @@ export default function FeedbackForm2() {
             method: 'POST',
             body: formData
         }).then(() => {
-            console.log("Feedback Form Submitted")
+            console.log("Cocktail Form Submitted")
             setIsLoading(false)
             setFormWasSubmitted(true)
         })
@@ -47,10 +47,6 @@ export default function FeedbackForm2() {
 
   return (
       <VStack
-          bg="rgba(51, 92, 105, 0.6)"
-          backdropFilter='auto'
-          backdropBlur='30px'
-          borderRadius="1rem"
           justifyContent="center"
           alignItems="center"
           w="100%"
@@ -60,15 +56,18 @@ export default function FeedbackForm2() {
               <>
                   <form
                       style={{ width: "100%" }}
-                      id='feedbackForm'         // Unique identifier for this Form
-                      onSubmit={(e) => handleSubmit( e, document.getElementById('feedbackForm') )}
+                      id='cocktailForm'         // Unique identifier for this Form
+                      onSubmit={(e) => handleSubmit(e, document.getElementById('cocktailForm'))}
                   >
                       <VStack spacing="3rem">
                           <Heading
                               color="white"
-                              fontSize="xxx-large"
+                              fontSize="xx-large"
+                              textAlign="center"
                           >
-                              FEEDBACK
+                              COCKTAIL
+                              <br />
+                              BOOKING
                           </Heading>
 
                           <FormControl isRequired isDisabled={isLoading}>
@@ -115,13 +114,13 @@ export default function FeedbackForm2() {
                   </form>
               </>
           ) : (
-                    <>
-                        <VStack spacing="3rem">
+                  <>
+                      <VStack spacing="3rem">
                           <Heading
                               color="white"
-                              fontSize="xxx-large"
+                              fontSize="xx-large"
                           >
-                              THANK YOU!
+                              SUCCESS!
                           </Heading>
 
                           <Text
@@ -130,9 +129,12 @@ export default function FeedbackForm2() {
                               fontWeight="bold"
                               textAlign="center"
                           >
-                              Your Feedback was
-                              <br/>
-                              Submitted Successfully
+                              Your DIY Cocktail slot has been
+                              <br />
+                              Reserved Successfully!
+                              <br />
+                              <br />
+                              See you at the cocktail stand
                           </Text>
 
                           <Button
@@ -141,7 +143,10 @@ export default function FeedbackForm2() {
                               color="white"
                               justifySelf="center"
                               w="100%"
-                              onClick={()=>setFormWasSubmitted(false)}
+                              onClick={() => {
+                                  setFormWasSubmitted(false);
+                                  setShowForm(false);
+                              }}
                               _hover={{
                                   color: "black",
                                   bg: "gray.200"
@@ -149,8 +154,8 @@ export default function FeedbackForm2() {
                           >
                               Done
                           </Button>
-                        </VStack>
-                    </>
+                      </VStack>
+                  </>
         )}
 
       </VStack>

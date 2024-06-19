@@ -2,6 +2,7 @@ import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import WelcomeText from "../assets/welcome.webp"
 import MapImage from "../assets/venueMap.webp"
 import { motion, spring } from 'framer-motion'
+import Attraction from './Attraction'
 
 
 
@@ -108,9 +109,9 @@ export default function Venue() {
           position="relative"
           transform="translate(0, -100%)"
 
-          bg="rgba(0,0,0,0.1)"
+          // bg="rgba(0,0,0,0.1)"
         >
-          {/* hello */}
+          <Attraction />
         </Box>
 
       </Box>
