@@ -47,9 +47,9 @@ export default function FeedbackForm2() {
 
     return (
       <VStack
-            bg="rgba(51, 92, 105, 0.6)"
+            bg="rgba(51, 92, 105, 0.4)"
             backdropFilter='auto'
-            backdropBlur='30px'
+            backdropBlur='15px'
             borderRadius="1rem"
             justifyContent="center"
             alignItems="center"
@@ -120,7 +120,7 @@ export default function FeedbackForm2() {
                         <VStack spacing="3rem">
                           <Heading
                               color="white"
-                              fontSize="xxx-large"
+                              fontSize="xx-large"
                           >
                               THANK YOU!
                           </Heading>

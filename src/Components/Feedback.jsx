@@ -1,9 +1,9 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
-import FeedbackBg from "../assets/entrance.webp"
-import GoodbyeTxt from "../assets/thanks_for_coming.webp"
-import SingletonLogo from "../assets/singleton_logo.webp"
+import FeedbackBg from "../assets/singleton_sky.webp"
+import GoodbyeTxt from "../assets/savour_moment.webp"
+import SingletonWhite from "../assets/singleton_white.webp"
+import Cheers from "../assets/cheers.webp"
 import { motion, spring } from 'framer-motion'
-import FeedbackForm from './FeedbackForm'
 import FeedbackForm2 from './FeedbackForm2'
 
 
@@ -86,11 +86,13 @@ export default function Feedback() {
       alignItems="center"
       pt="8dvh"
       scrollSnapAlign="start"
+      position="relative"
     >
       <Box
         as={motion.div}
-        alignSelf="start"
-        h="5%"
+        position="absolute"
+        left="1%"
+        top="10%"
         // bg="red"
 
         //ANIMATIONS
@@ -101,7 +103,7 @@ export default function Feedback() {
         <Image
           src={GoodbyeTxt}
           alt='See You Soon'
-          w={{base: "70vw", md:"40vw"}}
+          w={{ base: "70vw", md: "50vw" }}
         />
       </Box>
 
@@ -110,10 +112,10 @@ export default function Feedback() {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        h="85%"
-        w="90%"
-        maxW="600px"
-        px="1%"
+        h="90%"
+        w="100%"
+        maxW="1000px"
+        px="5%"
         // bg="blue"
 
         //ANIMATIONS
@@ -121,18 +123,20 @@ export default function Feedback() {
         initial="hidden"
         whileInView="visible"
       >
-        {/* <FeedbackForm /> */}
+
         <FeedbackForm2 />
       </Box>
 
       <Box
         as={motion.div}
         display="flex"
-        alignItems="center"
-        justifyContent="center"
-        h="10%"
+        alignItems="flex-end"
+        justifyContent="space-between"
+        h={{base:"7dvh", md:"15dvh"}}
         w="100%"
-        bg="White"
+        position="absolute"
+        bottom="0%"
+        // bg="red"
 
         //ANIMATIONS
         variants={footerMations}
@@ -140,9 +144,15 @@ export default function Feedback() {
         whileInView="visible"
       >
         <Image
-          src={SingletonLogo}
+          src={SingletonWhite}
           alt='Singleton Logo'
-          h="90%"
+          h="50%"
+        />
+
+        <Image
+          src={Cheers}
+          alt='Singleton Logo'
+          h="100%"
         />
       </Box>
 

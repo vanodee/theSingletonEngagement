@@ -70,6 +70,7 @@ export default function Attraction() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedAttraction, setSelectedAttraction] = useState(AttrList);
     const [showFormButton, setShowFormButton] = useState(false);
+    const [showDesc, setShowDesc] = useState(false);
     const [showForm, setShowForm] = useState(false);
 
     const [isLoading, setIsLoading] = useState(false);
@@ -104,6 +105,7 @@ export default function Attraction() {
                     onClick={() => {
                         setIsModalOpen(true);
                         setShowFormButton(attraction.showForm);
+                        setShowDesc(attraction.showDesc)
                         setSelectedAttraction(attraction);
                     }}
                     bg="rgba(51, 92, 105, 0.6)"
@@ -128,19 +130,10 @@ export default function Attraction() {
                     variants={attractMations}
                     whileInView="animate"
                 >
-                    <Image
-                        hideBelow="lg"
-                        src={attraction.image}
-                        objectFit="cover"
-                        borderRadius="0.3rem"
-                        h={{base:"2rem"}}
-                        w={{base:"2rem"}}
-                    />
-
                     <Text
                         color="white"
                         fontWeight="bold"
-                        fontSize={{ base: "1rem" }}
+                        fontSize={{ base: "1rem", lg:"1.5rem" }}
                         textAlign="center"
                     >
                         {attraction.title}
@@ -215,15 +208,17 @@ export default function Attraction() {
                                     {selectedAttraction.title}
                                 </Heading>
 
-                                <ModalBody>
-                                    <Text
-                                        // p="1rem"
-                                        fontWeight="bold"
-                                        pb="2rem"
-                                    >
-                                        {selectedAttraction.description}
-                                    </Text>
-                                </ModalBody>
+                                {showDesc && (
+                                    <ModalBody>
+                                        <Text
+                                            // p="1rem"
+                                            fontWeight="bold"
+                                            pb="2rem"
+                                        >
+                                            {selectedAttraction.description}
+                                        </Text>
+                                    </ModalBody>
+                                )}
 
                                 {showFormButton && (
                                     <ModalFooter w="100%">

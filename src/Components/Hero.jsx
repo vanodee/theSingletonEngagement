@@ -1,5 +1,4 @@
 import { Box, HStack, Heading, VStack, Image, Text } from '@chakra-ui/react'
-import { CalendarIcon } from '@chakra-ui/icons'
 import { motion, spring } from 'framer-motion'
 import BottleImage from "../assets/singleton_12.webp"
 import HeroImage from "../assets/hyds_bg.webp"
@@ -23,26 +22,6 @@ const heroTextMations = {
 
     transition:{
       delay: 0,
-      duration: 0.5,
-      type: spring,
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
-    }
-  }
-}
-
-const eventInfoMations = {
-  hidden: {
-    y: 50,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-
-    transition: {
-      delay: 0.5,
       duration: 0.5,
       type: spring,
       stiffness: 100,
@@ -80,7 +59,7 @@ export default function Hero() {
       h="100dvh"
       bgImg={HeroImage}
       bgSize="cover"
-      bgPos="center"
+      // bgPos="center"
       display="flex"
       flexDirection="column"
       justifyContent="start"
@@ -91,7 +70,7 @@ export default function Hero() {
     >
       <Box
         as={motion.div}
-        h="40%"
+        h="50%"
         maxW="1200px"
         display="flex"
         alignItems="center"
@@ -115,43 +94,7 @@ export default function Hero() {
 
       <Box
         as={motion.div}
-        h="20%"
-        display="flex"
-        alignItems="center"
-        // bg="blue"
-
-        //ANIMATIONS
-        variants={eventInfoMations}
-        initial="hidden"
-        whileInView="visible"
-      >
-        <VStack
-          color="white"
-          fontWeight="bold"
-          fontSize={{ base: "1rem", lg: "1.3rem" }}
-          textAlign="center"
-          spacing="15%"
-          justifyContent="center"
-          w="80dvw"
-          h="80%"
-          maxW="1200px"
-        >
-          <Text>
-            22nd June, 2024
-          </Text>
-
-          <Text>
-            No. 12, Event Location,
-            <br/>
-            Ideahouse Street.
-          </Text>
-
-        </VStack>
-      </Box>
-
-      <Box
-        as={motion.div}
-        h="40%"
+        h="50%"
         display="flex"
         alignItems="start"
         // bg="red"
@@ -163,7 +106,7 @@ export default function Hero() {
       >
         <Image
           src={BottleImage}
-          h="120%"
+          h="105%"
         />
       </Box>
 
@@ -172,7 +115,7 @@ export default function Hero() {
         w={{base:"1rem", md:"1.5rem"}}
         position="absolute"
         left="1%"
-        top="35%"
+        top="40%"
       />
 
       <Image
@@ -187,8 +130,8 @@ export default function Hero() {
         src={drink2}
         w={{base:"20dvh", md:"30dvh"}}
         position="absolute"
-        left={{base:"65%", md:"-5%", lg:"10%"}}
-        top={{ base: "1%", md: "-5%", lg: "10%" }}
+        left={{base:"65%", md:"-5%", lg:"7%"}}
+        top={{ base: "1%", md: "-5%", lg: "7%" }}
       />
 
       <Image
@@ -196,7 +139,7 @@ export default function Hero() {
         w={{base:"10dvh", md:"20dvh"}}
         position="absolute"
         left={{ base: "80%", md: "5%" }}
-        top={{ base: "80%", md: "75%" }}
+        top={{ base: "75%", md: "75%" }}
       />
 
       <Image

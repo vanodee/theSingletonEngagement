@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
-import WelcomeText from "../assets/welcome.webp"
+import WelcomeText from "../assets/welcome_white.webp"
 import MapImage from "../assets/floor_plan.webp"
+import VenueBg from "../assets/hyds_bg.webp"
 import { motion, spring } from 'framer-motion'
 import Attraction from './Attraction'
 
@@ -55,7 +56,9 @@ export default function Venue() {
     <Box
       h="100dvh"
       w="100%"
-      bg="white"
+      bgImg={VenueBg}
+      bgSize="cover"
+      bgPos="center"
       display="flex"
       flexDirection="column"
       justifyContent="start"
@@ -90,6 +93,7 @@ export default function Venue() {
         bgPos="center"
         overflow="hidden"
         overflowX={{ base: "scroll", md: "hidden" }}
+        overflowY={{ base: "hidden", md: "scroll", lg:"hidden" }}
         display={{md:"flex"}}
         alignItems="center"
         // bg="red"
@@ -101,7 +105,6 @@ export default function Venue() {
       >
         <Flex
           h={{ base: "100%", md: "max-content" }}
-          maxH={{md:"100%"}}
           w={{base:"max-content", md:"100%"}}
           position="relative"
         >
@@ -110,8 +113,9 @@ export default function Venue() {
             alt='Venue Map'
             h={{ base: "100%", md: "" }}
             w={{base:"", md:"100%"}}
-            objectPosition="left"
-            objectFit={{base:"cover", md:"contain"}}
+            // objectPosition="bottom"
+            // objectFit={{base:"cover", md:"contain"}}
+            objectFit="contain"
           />
 
           <Attraction />
@@ -128,7 +132,7 @@ export default function Venue() {
         // bg="blue"
       >
         <Text
-          color="primary.1"
+          color="white"
           fontWeight="bold"
           fontSize={{base:"1rem", md:"1.5rem"}}
         >
