@@ -26,14 +26,18 @@ export default function CocktailForm({ setShowForm }) {
         const formData = new FormData(formID)
         setIsLoading(true)
 
-        fetch("https://script.google.com/macros/s/AKfycbzTKqS8Qzpy7tWDMI0WNh6EwuhmkpZMwAaQrMmQlu0xHoETvUQfU1ytO0wzOY4dTK-tSg/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbwzzt9LNInX9Wu65mfRyztf6v8phoFKNrNvWh4sZu2-hBOG1RUi_qgrBYKvAXChjPKaFg/exec", {
             method: 'POST',
             body: formData
-        }).then(() => {
-            console.log("Cocktail Form Submitted")
-            setIsLoading(false)
-            setFormWasSubmitted(true)
         })
+            .then(response => response.json())
+            .then((data) => {
+                console.log("Cocktail Form Submitted")
+                setIsLoading(false)
+                setFormWasSubmitted(true)
+                console.log(data.message); // "Your message was successfully sent to the Google Sheets database!"
+                console.log(data.lastRow); // The number of the last edited row
+            })
     }
 
 

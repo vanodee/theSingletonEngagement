@@ -29,16 +29,34 @@ const attractMations = {
         scale: 1,
     },
     animate: {
-        scale: 1.1,
+        y: 10,
 
         transition: {
             // delay: 0,
-            duration: 0.5,
+            duration: 3,
             type: spring,
             stiffness: 100,
             damping: 30,
             restDelta: 0.001,
-            yoyo: Infinity
+            repeat: Infinity,
+            repeatType: "reverse",
+        }
+    }
+}
+
+const loadiMations = {
+    animate: {
+        opacity: 0.1,
+
+        transition: {
+            // delay: 0,
+            duration: 0.7,
+            type: spring,
+            stiffness: 100,
+            damping: 30,
+            restDelta: 0.001,
+            repeat: Infinity,
+            repeatType: "reverse",
         }
     }
 }
@@ -50,10 +68,31 @@ export default function Attraction() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedAttraction, setSelectedAttraction] = useState(AttrList);
-    const [showForm, setShowForm] = useState(false);
     const [showFormButton, setShowFormButton] = useState(false);
+    const [showForm, setShowForm] = useState(false);
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [slotNumber, setSlotNumber] = useState(null);
 
     const attractions = AttrList;
+
+
+    // Empty POST request to the Google Sheet, to generate new Booking Slot
+    const createNewSlot = () => {
+        setIsLoading(true)
+
+        fetch("https://script.google.com/macros/s/AKfycbyz4Bvz5GxV2Qz05MeFLZNsWqbcWo3uzEJn0eFPMr9vvdjtUefvQjEWA9s9BuRtmlXQ/exec", {
+            method: 'POST'
+        })
+            .then(response => response.json())
+            .then((data) => {
+                // console.log(data.message); // "Your message was successfully sent to the Google Sheets database!"
+                // console.log(data.lastRow); // The number of the last edited row
+                setIsLoading(false)
+                setSlotNumber(data.lastRow)
+            })
+    }
+
 
     return (
         <>
@@ -85,10 +124,9 @@ export default function Attraction() {
                     }}
 
                     //ANIMATIONS
-                    // variants={attractMations}
-                    // // initial="initial"
-                    // // animate="animate"
-                    // whileHover="animate"
+                    variants={attractMations}
+                    // initial="initial"
+                    animate={!isModalOpen && "animate"}
                 >
                     <Image
                         hideBelow="md"
@@ -113,6 +151,7 @@ export default function Attraction() {
 
             <Modal
                 isOpen={isModalOpen}
+                closeOnOverlayClick={showForm ? false : true}
                 onClose={() => {
                     setIsModalOpen(false);
                     setShowForm(false);
@@ -129,21 +168,23 @@ export default function Attraction() {
                 <ModalContent
                     bg="rgba(0, 0, 0, 0.0)"
                 >
-                    <IconButton
-                        icon={<ArrowBackIcon />}
-                        onClick={() => (!showForm ? setIsModalOpen(false) : setShowForm(false))}
-                        bg="rgba(51, 92, 105, 0.6)"
-                        backdropFilter='auto'
-                        backdropBlur='30px'
-                        borderRadius="1rem"
-                        color="white"
-                        size="lg"
-                        w="2rem"
-                        position="absolute"
-                        zIndex={1}
-                        left="7%"
-                        top="2%"
-                    />
+                    {!showForm && (
+                        <IconButton
+                            icon={<ArrowBackIcon />}
+                            onClick={() => setIsModalOpen(false)}
+                            bg="rgba(51, 92, 105, 0.6)"
+                            backdropFilter='auto'
+                            backdropBlur='30px'
+                            borderRadius="1rem"
+                            color="white"
+                            size="lg"
+                            w="2rem"
+                            position="absolute"
+                            zIndex={1}
+                            left="7%"
+                            top="2%"
+                        />
+                    )}
 
                     <VStack
                         spacing="1rem"
@@ -192,7 +233,10 @@ export default function Attraction() {
                                             color="white"
                                             justifySelf="center"
                                             w="100%"
-                                            onClick={() => setShowForm(true)}
+                                            onClick={() => {
+                                                setShowForm(true);
+                                                createNewSlot();
+                                            }}
                                             _hover={{
                                                 color: "black",
                                                 bg: "gray.200"
@@ -205,7 +249,87 @@ export default function Attraction() {
                             </>
                         ) : (
                             <>
-                                <CocktailForm setShowForm={setShowForm} />
+                                    <VStack
+                                        justifyContent="center"
+                                        alignItems="center"
+                                        w="100%"
+                                        p="7%"
+                                        spacing="3rem"
+                                    >
+                                        {isLoading ? (
+                                            <Heading
+                                                as={motion.div}
+                                                color="white"
+                                                fontSize="xx-large"
+
+                                                //ANIMATIONS
+                                                variants={loadiMations}
+                                                animate="animate"
+                                            >
+                                                Please Wait...
+                                            </Heading>
+
+                                        ) : (
+                                                <>
+                                                    <Heading
+                                                        color="white"
+                                                        fontSize="xx-large"
+                                                    >
+                                                        SUCCESS!
+                                                    </Heading>
+
+                                                    <Text
+                                                        color="white"
+                                                        fontSize="medium"
+                                                        fontWeight="bold"
+                                                        textAlign="center"
+                                                    >
+                                                        Your DIY Cocktail slot has been
+                                                        <br />
+                                                        Reserved Successfully!
+                                                    </Text>
+
+                                                    <Heading
+                                                        color="white"
+                                                        fontSize="xxx-large"
+                                                    >
+                                                        {`#${slotNumber}`}
+                                                    </Heading>
+
+                                                    <Text
+                                                        color="white"
+                                                        fontSize="medium"
+                                                        fontWeight="bold"
+                                                        textAlign="center"
+                                                    >
+                                                        Please take a screenshot of this page
+                                                        <br />
+                                                        to redeem your reservation!
+                                                        <br />
+                                                        <br />
+                                                        See you at the Cocktail Stand!!
+                                                    </Text>
+
+                                                    <Button
+                                                        variant="outline"
+                                                        size="lg"
+                                                        color="white"
+                                                        justifySelf="center"
+                                                        w="100%"
+                                                        onClick={() => {
+                                                            setShowForm(false);
+                                                        }}
+                                                        _hover={{
+                                                            color: "black",
+                                                            bg: "gray.200"
+                                                        }}
+                                                    >
+                                                        I have taken my screenshot!
+                                                    </Button>
+                                                </>
+                                        )}
+
+                                    </VStack>
                             </>
                         )}
 

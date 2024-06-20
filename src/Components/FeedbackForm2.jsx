@@ -26,11 +26,11 @@ export default function FeedbackForm2() {
         const formData = new FormData(formID)
         setIsLoading(true)
 
-        fetch("https://script.google.com/macros/s/AKfycbzTKqS8Qzpy7tWDMI0WNh6EwuhmkpZMwAaQrMmQlu0xHoETvUQfU1ytO0wzOY4dTK-tSg/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbwEu1S1MmvGAc3btLPeyYh62XJUK3ji7s756Woyx5iOOxK4OU6KXF8Pdq-OSjOiw8ayIQ/exec", {
             method: 'POST',
             body: formData
         }).then(() => {
-            console.log("Feedback Form Submitted")
+            // console.log("Feedback Form Submitted")
             setIsLoading(false)
             setFormWasSubmitted(true)
         })
@@ -45,7 +45,7 @@ export default function FeedbackForm2() {
     }
 
 
-  return (
+    return (
       <VStack
           bg="rgba(51, 92, 105, 0.6)"
           backdropFilter='auto'
@@ -154,6 +154,6 @@ export default function FeedbackForm2() {
         )}
 
       </VStack>
-  )
+    )
 }
 
