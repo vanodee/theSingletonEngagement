@@ -12,10 +12,10 @@ export default function Header() {
           display="flex"
           justifyContent="center"
           alignItems="center"
-          bgColor='rgba(0, 0, 0, 0.05)'
-          backdropFilter='auto'
-          backdropBlur='8px'
-        //   boxShadow="0px 4px rgba(0, 0, 0, 0.25)"
+          // bgColor='rgba(0, 0, 0, 0.05)'
+          // backdropFilter='auto'
+          // backdropBlur='8px'
+          // boxShadow="0px 4px rgba(0, 0, 0, 0.25)"
       >
           <Img
               src={SingletonLogo}

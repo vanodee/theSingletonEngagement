@@ -1,6 +1,6 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
 import FeedbackBg from "../assets/entrance.webp"
-import GoodbyeTxt from "../assets/seeYouSoon.webp"
+import GoodbyeTxt from "../assets/thanks_for_coming.webp"
 import SingletonLogo from "../assets/singleton_logo.webp"
 import { motion, spring } from 'framer-motion'
 import FeedbackForm from './FeedbackForm'

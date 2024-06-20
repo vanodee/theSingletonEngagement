@@ -1,8 +1,14 @@
 import { Box, HStack, Heading, VStack, Image, Text } from '@chakra-ui/react'
 import { CalendarIcon } from '@chakra-ui/icons'
 import { motion, spring } from 'framer-motion'
-import BottleImage from "../assets/singleton_with_pack.webp"
-import HeroImage from "../assets/heroImage.webp"
+import BottleImage from "../assets/singleton_12.webp"
+import HeroImage from "../assets/hyds_bg.webp"
+import hyds from "../assets/hyds.webp"
+import drinkResponsibly from "../assets/drink_responsibly.webp"
+import drink1 from "../assets/drink_1.webp"
+import drink2 from "../assets/drink_2.webp"
+import mint from "../assets/mint.webp"
+import appleSlice from "../assets/apple_slice.webp"
 
 
 //ANIMATION VARIANTS -------------------------------//
@@ -81,12 +87,12 @@ export default function Hero() {
       alignItems="center"
       pt="8dvh"
       scrollSnapAlign="start"
+      position="relative"
     >
       <Box
         as={motion.div}
-        h="30%"
-        w="90%"
-        maxW="400px"
+        h="40%"
+        maxW="1200px"
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -97,22 +103,19 @@ export default function Hero() {
         initial="hidden"
         whileInView="visible"
       >
-        <Heading
-          // bg="green"
-          color="white"
-          textShadow='0px 4px rgba(0, 0, 0, 0.8)'
-          textAlign="center"
-          fontSize={{base:"300%", lg:"500%"}}
-        >
-          How Do You
-          <br />
-          SINGLETON?
-        </Heading>
+        <Image
+          src={hyds}
+          alt='How Do You Singleton'
+          objectFit="contain"
+          px="1%"
+          h={{base:"55%", md:"80%"}}
+        />
+
       </Box>
 
       <Box
         as={motion.div}
-        h="30%"
+        h="20%"
         display="flex"
         alignItems="center"
         // bg="blue"
@@ -123,56 +126,25 @@ export default function Hero() {
         whileInView="visible"
       >
         <VStack
-          bg="rgba(51, 92, 105, 0.6)"
-          backdropFilter='auto'
-          backdropBlur='30px'
-          borderRadius="1rem"
-          // spacing="10%"
-          justifyContent="space-between"
           color="white"
+          fontWeight="bold"
+          fontSize={{ base: "1rem", lg: "1.3rem" }}
+          textAlign="center"
+          spacing="15%"
+          justifyContent="center"
           w="80dvw"
           h="80%"
-          py="5%"
-          maxW="350px"
-          maxH="100px"
+          maxW="1200px"
         >
-          <HStack
-            spacing="5%"
-            w="80%"
-          >
-            <CalendarIcon
-              w={{md:"10%"}}
-              color="white"
-            />
+          <Text>
+            22nd June, 2024
+          </Text>
 
-            <Text
-              fontWeight="bold"
-              fontSize={{base:"0.7rem", md: "0.7rem" }}
-              // bg="red"
-            >
-              22nd June, 2024
-            </Text>
-
-          </HStack>
-
-          <HStack
-            spacing="5%"
-            w="80%"
-          >
-            <CalendarIcon
-              w={{ md: "10%" }}
-              color="white"
-            />
-
-            <Text
-              fontWeight="bold"
-              fontSize={{ base: "0.7rem", md: "0.7rem" }}
-              // bg="red"
-            >
-              No. 12, Event Location, Ideahouse Street.
-            </Text>
-
-          </HStack>
+          <Text>
+            No. 12, Event Location,
+            <br/>
+            Ideahouse Street.
+          </Text>
 
         </VStack>
       </Box>
@@ -191,9 +163,49 @@ export default function Hero() {
       >
         <Image
           src={BottleImage}
-          h="110%"
+          h="120%"
         />
       </Box>
+
+      <Image
+        src={drinkResponsibly}
+        w={{base:"1rem", md:"1.5rem"}}
+        position="absolute"
+        left="1%"
+        top="35%"
+      />
+
+      <Image
+        src={drink1}
+        w={{ base: "20dvh", md: "30dvh" }}
+        position="absolute"
+        left={{base:"-7%", md:"80%"}}
+        top={{ base: "88%", md: "80%" }}
+      />
+
+      <Image
+        src={drink2}
+        w={{base:"20dvh", md:"30dvh"}}
+        position="absolute"
+        left={{base:"65%", md:"-5%", lg:"10%"}}
+        top={{ base: "1%", md: "-5%", lg: "10%" }}
+      />
+
+      <Image
+        src={mint}
+        w={{base:"10dvh", md:"20dvh"}}
+        position="absolute"
+        left={{ base: "80%", md: "5%" }}
+        top={{ base: "80%", md: "75%" }}
+      />
+
+      <Image
+        src={appleSlice}
+        w={{ base: "10dvh", md: "20dvh" }}
+        position="absolute"
+        left={{ base: "78%", md: "70%" }}
+        top={{ base: "40%", md: "10%" }}
+      />
 
     </Box>
   )
