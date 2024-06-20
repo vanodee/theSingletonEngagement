@@ -1,6 +1,6 @@
-import { Box, Heading, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import WelcomeText from "../assets/welcome.webp"
-import MapImage from "../assets/venueMap.webp"
+import MapImage from "../assets/floor_plan.webp"
 import { motion, spring } from 'framer-motion'
 import Attraction from './Attraction'
 
@@ -60,7 +60,7 @@ export default function Venue() {
       flexDirection="column"
       justifyContent="start"
       alignItems="center"
-      pt={{ base: "4rem", md: "6rem" }}
+      pt="8dvh"
       scrollSnapAlign="start"
     >
       <Box
@@ -85,9 +85,13 @@ export default function Venue() {
         as={motion.div}
         h="80%"
         w="90%"
+        borderRadius="0.5rem"
         maxW="1200px"
-        borderRadius="1rem"
+        bgPos="center"
         overflow="hidden"
+        overflowX={{ base: "scroll", md: "hidden" }}
+        display={{md:"flex"}}
+        alignItems="center"
         // bg="red"
 
         //ANIMATIONS
@@ -95,24 +99,24 @@ export default function Venue() {
         initial="hidden"
         whileInView="visible"
       >
-        <Image
-          src={MapImage}
-          alt='Venue Map'
-          w="100%"
-          h="100%"
-          objectFit="cover"
-        />
-
-        <Box
-          h="100%"
-          w="100%"
+        <Flex
+          h={{ base: "100%", md: "max-content" }}
+          maxH={{md:"100%"}}
+          w={{base:"max-content", md:"100%"}}
           position="relative"
-          transform="translate(0, -100%)"
-
-          // bg="rgba(0,0,0,0.1)"
         >
+          <Image
+            src={MapImage}
+            alt='Venue Map'
+            h={{ base: "100%", md: "" }}
+            w={{base:"", md:"100%"}}
+            objectPosition="left"
+            objectFit={{base:"cover", md:"contain"}}
+          />
+
           <Attraction />
-        </Box>
+
+        </Flex>
 
       </Box>
 
@@ -121,11 +125,12 @@ export default function Venue() {
         alignItems="center"
         justifyContent="center"
         h="10%"
+        // bg="blue"
       >
         <Text
           color="primary.1"
           fontWeight="bold"
-          fontSize={{base:"1rem", md:"2rem"}}
+          fontSize={{base:"1rem", md:"1.5rem"}}
         >
           Click a location on the map to Explore
         </Text>

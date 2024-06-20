@@ -1,5 +1,5 @@
 import { Box, Heading, Image, Text } from '@chakra-ui/react'
-import FeedbackBg from "../assets/singleton_set_image.webp"
+import FeedbackBg from "../assets/entrance.webp"
 import GoodbyeTxt from "../assets/seeYouSoon.webp"
 import SingletonLogo from "../assets/singleton_logo.webp"
 import { motion, spring } from 'framer-motion'
@@ -79,17 +79,18 @@ export default function Feedback() {
       h="100dvh"
       bgImg={FeedbackBg}
       bgSize="cover"
+      bgPos="center"
       display="flex"
       flexDirection="column"
       justifyContent="start"
       alignItems="center"
-      pt={{ base: "4rem", md: "6rem" }}
+      pt="8dvh"
       scrollSnapAlign="start"
     >
       <Box
         as={motion.div}
         alignSelf="start"
-        h="10%"
+        h="5%"
         // bg="red"
 
         //ANIMATIONS
@@ -109,9 +110,10 @@ export default function Feedback() {
         display="flex"
         alignItems="center"
         justifyContent="center"
-        h="80%"
+        h="85%"
         w="90%"
         maxW="600px"
+        px="1%"
         // bg="blue"
 
         //ANIMATIONS

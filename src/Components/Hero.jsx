@@ -74,18 +74,22 @@ export default function Hero() {
       h="100dvh"
       bgImg={HeroImage}
       bgSize="cover"
+      bgPos="center"
       display="flex"
       flexDirection="column"
       justifyContent="start"
       alignItems="center"
-      pt={{base:"4rem", md:"6rem"}}
+      pt="8dvh"
       scrollSnapAlign="start"
     >
       <Box
         as={motion.div}
         h="30%"
+        w="90%"
+        maxW="400px"
         display="flex"
         alignItems="center"
+        justifyContent="center"
         // bg="red"
 
         //ANIMATIONS
@@ -94,10 +98,11 @@ export default function Hero() {
         whileInView="visible"
       >
         <Heading
+          // bg="green"
           color="white"
           textShadow='0px 4px rgba(0, 0, 0, 0.8)'
           textAlign="center"
-          fontSize={{base:"3rem", md:"5rem"}}
+          fontSize={{base:"300%", lg:"500%"}}
         >
           How Do You
           <br />
@@ -122,33 +127,53 @@ export default function Hero() {
           backdropFilter='auto'
           backdropBlur='30px'
           borderRadius="1rem"
-          p={{base:"1rem", md:"2rem"}}
-          alignItems="left"
-          color="white"
+          // spacing="10%"
           justifyContent="space-between"
-          w="80vw"
-          h={{base:"60%", md:"80%"}}
+          color="white"
+          w="80dvw"
+          h="80%"
+          py="5%"
           maxW="350px"
+          maxH="100px"
         >
-          <HStack spacing="1rem">
-            <CalendarIcon boxSize={{base:"2rem", md:"3rem"}} color="white" />
+          <HStack
+            spacing="5%"
+            w="80%"
+          >
+            <CalendarIcon
+              w={{md:"10%"}}
+              color="white"
+            />
+
             <Text
               fontWeight="bold"
-              fontSize={{base:"sm", md:"lg"}}
+              fontSize={{base:"0.7rem", md: "0.7rem" }}
+              // bg="red"
             >
               22nd June, 2024
             </Text>
+
           </HStack>
 
-          <HStack spacing="1rem">
-            <CalendarIcon boxSize={{ base: "2rem", md: "3rem" }} color="white" />
+          <HStack
+            spacing="5%"
+            w="80%"
+          >
+            <CalendarIcon
+              w={{ md: "10%" }}
+              color="white"
+            />
+
             <Text
               fontWeight="bold"
-              fontSize={{ base: "sm", md: "lg" }}
+              fontSize={{ base: "0.7rem", md: "0.7rem" }}
+              // bg="red"
             >
               No. 12, Event Location, Ideahouse Street.
             </Text>
+
           </HStack>
+
         </VStack>
       </Box>
 
@@ -166,7 +191,7 @@ export default function Hero() {
       >
         <Image
           src={BottleImage}
-          h="120%"
+          h="110%"
         />
       </Box>
 

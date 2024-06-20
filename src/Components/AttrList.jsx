@@ -1,8 +1,8 @@
 import theStage from "../assets/stage.webp"
-import diyCocktail from "../assets/diyCocktail.webp"
-import immersCorner from "../assets/immersion.webp"
+import diyCocktail from "../assets/diy_bar.webp"
+import immersCorner from "../assets/immersion_corner.webp"
 import foodVendors from "../assets/foodVendors.webp"
-import photoBooth from "../assets/photoBooth.webp"
+import photoBooth from "../assets/photobooth_2.webp"
 
 
 export const AttrList = [
@@ -12,7 +12,7 @@ export const AttrList = [
         image: theStage,
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
         showForm: false,
-        posLeft: "5%",
+        posLeft: "15%",
         posTop: "10%"
     },
     {
@@ -21,8 +21,8 @@ export const AttrList = [
         image: diyCocktail,
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
         showForm: true,
-        posLeft: "35%",
-        posTop: "45%"
+        posLeft: "25%",
+        posTop: "80%"
     },
     {
         id: 3,
@@ -30,8 +30,8 @@ export const AttrList = [
         image: immersCorner,
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
         showForm: false,
-        posLeft: "55%",
-        posTop: "10%"
+        posLeft: "50%",
+        posTop: "45%"
     },
     {
         id: 4,
@@ -39,7 +39,7 @@ export const AttrList = [
         image: foodVendors,
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
         showForm: false,
-        posLeft: "60%",
+        posLeft: "65%",
         posTop: "80%"
     },
     {
@@ -48,7 +48,7 @@ export const AttrList = [
         image: photoBooth,
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
         showForm: false,
-        posLeft: "5%",
-        posTop: "80%"
+        posLeft: "2%",
+        posTop: "50%"
     }
 ]

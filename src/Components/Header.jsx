@@ -20,7 +20,7 @@ export default function Header() {
           <Img
               src={SingletonLogo}
               alt='Singleton Logo'
-              h={{base:"3rem", md:"5rem"}}
+              h="7dvh"
           />
       </Box>
   )

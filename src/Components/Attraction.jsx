@@ -29,7 +29,8 @@ const attractMations = {
         scale: 1,
     },
     animate: {
-        y: 10,
+        y: -10,
+        scale: 1.05,
 
         transition: {
             // delay: 0,
@@ -111,7 +112,7 @@ export default function Attraction() {
                     borderRadius="0.5rem"
                     cursor='pointer'
                     w="fit-content"
-                    p="0.7rem"
+                    p="0.5rem"
 
                     position="absolute"
                     left={attraction.posLeft}
@@ -125,22 +126,21 @@ export default function Attraction() {
 
                     //ANIMATIONS
                     variants={attractMations}
-                    // initial="initial"
-                    animate={!isModalOpen && "animate"}
+                    whileInView="animate"
                 >
                     <Image
-                        hideBelow="md"
+                        hideBelow="lg"
                         src={attraction.image}
                         objectFit="cover"
-                        borderRadius="0.5rem"
-                        h="3rem"
-                        w="3rem"
+                        borderRadius="0.3rem"
+                        h={{base:"2rem"}}
+                        w={{base:"2rem"}}
                     />
 
                     <Text
                         color="white"
                         fontWeight="bold"
-                        fontSize={{ md: "1.5rem" }}
+                        fontSize={{ base: "1rem" }}
                         textAlign="center"
                     >
                         {attraction.title}
@@ -318,6 +318,7 @@ export default function Attraction() {
                                                         w="100%"
                                                         onClick={() => {
                                                             setShowForm(false);
+                                                            setIsModalOpen(false);
                                                         }}
                                                         _hover={{
                                                             color: "black",

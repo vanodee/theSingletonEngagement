@@ -47,14 +47,15 @@ export default function FeedbackForm2() {
 
     return (
       <VStack
-          bg="rgba(51, 92, 105, 0.6)"
-          backdropFilter='auto'
-          backdropBlur='30px'
-          borderRadius="1rem"
-          justifyContent="center"
-          alignItems="center"
-          w="100%"
-          p="7%"
+            bg="rgba(51, 92, 105, 0.6)"
+            backdropFilter='auto'
+            backdropBlur='30px'
+            borderRadius="1rem"
+            justifyContent="center"
+            alignItems="center"
+            w="100%"
+            // h="100%"
+            p="3%"
       >
           {!formWasSubmitted ? (
               <>
@@ -63,10 +64,10 @@ export default function FeedbackForm2() {
                       id='feedbackForm'         // Unique identifier for this Form
                       onSubmit={(e) => handleSubmit( e, document.getElementById('feedbackForm') )}
                   >
-                      <VStack spacing="3rem">
+                      <VStack spacing="1rem">
                           <Heading
                               color="white"
-                              fontSize="xxx-large"
+                              fontSize={{base:"2rem", lg:"3rem"}}
                           >
                               FEEDBACK
                           </Heading>
@@ -76,7 +77,7 @@ export default function FeedbackForm2() {
                                   id="gender"
                                   name="gender"
                                   placeholder="Tell us your gender"
-                                  sx={inputFieldStyles}
+                                sx={inputFieldStyles}
                               >
                                   <option value='Male'>Male</option>
                                   <option value='Female'>Female</option>
@@ -90,7 +91,7 @@ export default function FeedbackForm2() {
                                   type="text"
                                   resize="none"
                                   placeholder="Tell us what you think"
-                                  sx={inputFieldStyles}
+                                sx={inputFieldStyles}
                               />
                           </FormControl>
 
