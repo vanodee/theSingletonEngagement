@@ -35,7 +35,7 @@ const mapMations = {
     zIndex: 1,
 
     transition: {
-      delay: 0.7,
+      delay: 0.2,
       duration: 0.5,
     }
   }

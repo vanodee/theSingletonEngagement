@@ -20,8 +20,9 @@ export const AttrList = [
         description: "Delight in thrilling performances from Bandhitz, amazing illusions from Precious the Magician and relaxing sounds from DJ Soul Yin. With special appearance from Tena Violinist. Join us for an unforgettable experience filled with fun and entertainment.",
         showDesc: true,
         showForm: false,
-        posLeft: "15%",
-        posTop: "25%"
+        posLeft: "25%",
+        posTop: "25%",
+        posRight: ""
     },
     {
         id: 2,
@@ -30,8 +31,9 @@ export const AttrList = [
         description: "Link-up with our world-class bartenders, as they craft custom drinks of your choice. Reserve your slot at the cocktail stand with the button below.",
         showDesc: true,
         showForm: true,
-        posLeft: "10%",
-        posTop: "87%"
+        posLeft: "13%",
+        posTop: "80%",
+        posRight: ""
     },
     {
         id: 3,
@@ -41,7 +43,8 @@ export const AttrList = [
         showDesc: true,
         showForm: false,
         posLeft: "50%",
-        posTop: "55%"
+        posTop: "55%",
+        posRight: ""
     },
     {
         id: 4,
@@ -50,8 +53,9 @@ export const AttrList = [
         description: "",
         showDesc: false,
         showForm: false,
-        posLeft: "42%",
-        posTop: "22%"
+        posLeft: "45%",
+        posTop: "27%",
+        posRight: ""
     },
     {
         id: 5,
@@ -61,7 +65,8 @@ export const AttrList = [
         showDesc: false,
         showForm: false,
         posLeft: "2%",
-        posTop: "50%"
+        posTop: "50%",
+        posRight: ""
     },
     {
         id: 6,
@@ -71,7 +76,8 @@ export const AttrList = [
         showDesc: false,
         showForm: false,
         posLeft: "1%",
-        posTop: "70%"
+        posTop: "70%",
+        posRight: ""
     },
     {
         id: 7,
@@ -80,8 +86,9 @@ export const AttrList = [
         description: "",
         showDesc: false,
         showForm: false,
-        posLeft: "50%",
-        posTop: "90%"
+        posLeft: "35%",
+        posTop: "90%",
+        posRight: ""
     },
     {
         id: 8,
@@ -91,7 +98,8 @@ export const AttrList = [
         showDesc: true,
         showForm: false,
         posLeft: "30%",
-        posTop: "72%"
+        posTop: "80%",
+        posRight: ""
     },
     {
         id: 9,
@@ -100,8 +108,9 @@ export const AttrList = [
         description: "The journey begins here.",
         showDesc: true,
         showForm: false,
-        posLeft: "72%",
-        posTop: "40%"
+        posLeft: "",
+        posTop: "40%",
+        posRight: "1%"
     },
     {
         id: 10,
@@ -110,8 +119,9 @@ export const AttrList = [
         description: "Get accredited and redeem your drink vouchers. A little something to kickstart the party awaits you.",
         showDesc: true,
         showForm: false,
-        posLeft: "77%",
-        posTop: "22%"
+        posLeft: "",
+        posTop: "22%",
+        posRight: "1%"
     },
     {
         id: 11,
@@ -120,7 +130,8 @@ export const AttrList = [
         description: "Ready for a challenge? Solve our puzzles and win amazing prizes.",
         showDesc: true,
         showForm: false,
-        posLeft: "63%",
-        posTop: "30%"
+        posLeft: "65%",
+        posTop: "25%",
+        posRight: ""
     },
 ]

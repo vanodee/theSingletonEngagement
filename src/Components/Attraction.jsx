@@ -100,6 +100,7 @@ export default function Attraction() {
                     position="absolute"
                     left={attraction.posLeft}
                     top={attraction.posTop}
+                    right={attraction.posRight}
 
                     _hover={{
                         bg: "rgba(5, 92, 105, 0.6)",
