@@ -10,10 +10,6 @@ export default function Home() {
         overflowY="scroll"
         overflowX="hidden"
         scrollSnapType="y mandatory"
-        // display="flex"
-        // flexDirection="column"
-        // justifyContent="center"
-        // alignItems="center"
       >
         <Hero />
         <Venue />

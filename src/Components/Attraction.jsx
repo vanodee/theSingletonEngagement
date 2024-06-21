@@ -6,9 +6,7 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
     ModalBody,
-    ModalCloseButton,
     VStack,
     Heading,
     ModalFooter,
@@ -16,29 +14,19 @@ import {
 } from "@chakra-ui/react";
 
 import { useState } from "react";
-import { motion, spring } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import CocktailForm from "./CocktailForm";
 import { AttrList } from "./AttrList";
 
 
 
 //ANIMATION VARIANTS -------------------------------//
 const attractMations = {
-    initial: {
-        scale: 1,
-    },
     animate: {
         y: -10,
-        scale: 1.05,
 
         transition: {
-            // delay: 0,
-            duration: 3,
-            type: spring,
-            stiffness: 100,
-            damping: 30,
-            restDelta: 0.001,
+            duration: 0.5,
             repeat: Infinity,
             repeatType: "reverse",
         }
@@ -50,12 +38,7 @@ const loadiMations = {
         opacity: 0.1,
 
         transition: {
-            // delay: 0,
             duration: 0.7,
-            type: spring,
-            stiffness: 100,
-            damping: 30,
-            restDelta: 0.001,
             repeat: Infinity,
             repeatType: "reverse",
         }
@@ -88,8 +71,6 @@ export default function Attraction() {
         })
             .then(response => response.json())
             .then((data) => {
-                // console.log(data.message); // "Your message was successfully sent to the Google Sheets database!"
-                // console.log(data.lastRow); // The number of the last edited row
                 setIsLoading(false)
                 setSlotNumber(data.lastRow)
             })
@@ -123,7 +104,7 @@ export default function Attraction() {
                     _hover={{
                         bg: "rgba(5, 92, 105, 0.6)",
                         spacing: "2rem",
-                        boxShadow: "0px 9px rgba(0, 0, 0, 0.1)"
+                        boxShadow: "0px 2px rgba(0, 0, 0, 0.2)"
                     }}
 
                     //ANIMATIONS
@@ -187,7 +168,7 @@ export default function Attraction() {
                         borderRadius="1rem"
                         overflow="hidden"
                         color="white"
-                        boxShadow="0px 9px rgba(0, 0, 0, 0.2)"
+                        boxShadow="0px 2px rgba(0, 0, 0, 0.2)"
                         alignItems="start"
                         mx="5%"
                     >
@@ -199,6 +180,7 @@ export default function Attraction() {
                                     objectFit="cover"
                                     h="30dvh"
                                     w="100%"
+                                    loading="lazy"
                                 />
 
                                 <Heading
@@ -211,7 +193,6 @@ export default function Attraction() {
                                 {showDesc && (
                                     <ModalBody>
                                         <Text
-                                            // p="1rem"
                                             fontWeight="bold"
                                             pb="2rem"
                                         >

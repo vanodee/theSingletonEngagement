@@ -1,12 +1,8 @@
 import {
-    Flex,
     VStack,
     FormControl,
-    FormLabel,
-    Input,
     Select,
     Button,
-    FormErrorMessage,
     Heading,
     Text,
     Textarea
@@ -64,10 +60,10 @@ export default function FeedbackForm2() {
                       id='feedbackForm'         // Unique identifier for this Form
                       onSubmit={(e) => handleSubmit( e, document.getElementById('feedbackForm') )}
                   >
-                      <VStack spacing="1rem">
+                        <VStack spacing={{ base: "2rem", md: "1rem", lg:"3rem"}}>
                           <Heading
                               color="white"
-                              fontSize={{base:"2rem", lg:"3rem"}}
+                              fontSize={{base:"2.5rem", lg:"3rem"}}
                           >
                               FEEDBACK
                           </Heading>

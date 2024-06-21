@@ -3,7 +3,7 @@ import FeedbackBg from "../assets/singleton_sky.webp"
 import GoodbyeTxt from "../assets/savour_moment.webp"
 import SingletonWhite from "../assets/singleton_white.webp"
 import Cheers from "../assets/cheers.webp"
-import { motion, spring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import FeedbackForm2 from './FeedbackForm2'
 
 
@@ -21,10 +21,6 @@ const goodbyeTextMations = {
     transition: {
       delay: 0,
       duration: 1,
-      type: spring,
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
     }
   }
 }
@@ -42,10 +38,6 @@ const footerMations = {
     transition: {
       delay: 0.7,
       duration: 0.5,
-      type: spring,
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
     }
   }
 }
@@ -61,10 +53,6 @@ const feedbackMations = {
     transition: {
       delay: 0.7,
       duration: 0.5,
-      type: spring,
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
     }
   }
 }
@@ -104,6 +92,7 @@ export default function Feedback() {
           src={GoodbyeTxt}
           alt='See You Soon'
           w={{ base: "70vw", md: "50vw" }}
+          loading='lazy'
         />
       </Box>
 
@@ -114,7 +103,7 @@ export default function Feedback() {
         justifyContent="center"
         h="90%"
         w="100%"
-        maxW="1000px"
+        maxW="800px"
         px="5%"
         // bg="blue"
 
@@ -147,12 +136,14 @@ export default function Feedback() {
           src={SingletonWhite}
           alt='Singleton Logo'
           h="50%"
+          loading='lazy'
         />
 
         <Image
           src={Cheers}
           alt='Singleton Logo'
           h="100%"
+          loading='lazy'
         />
       </Box>
 

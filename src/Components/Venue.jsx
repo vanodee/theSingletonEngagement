@@ -1,8 +1,8 @@
-import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import WelcomeText from "../assets/welcome_white.webp"
 import MapImage from "../assets/floor_plan.webp"
 import VenueBg from "../assets/hyds_bg.webp"
-import { motion, spring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Attraction from './Attraction'
 
 
@@ -10,18 +10,16 @@ import Attraction from './Attraction'
 //ANIMATION VARIANTS -------------------------------//
 const welcomeTextMations = {
   hidden: {
-    y: "50dvh",
+    y: 50,
+    opacity: 0,
   },
   visible: {
     y: 0,
+    opacity: 1,
 
     transition: {
       delay: 0,
-      duration: 0.5,
-      type: spring,
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
+      duration: 0.7,
     }
   }
 }
@@ -39,10 +37,6 @@ const mapMations = {
     transition: {
       delay: 0.7,
       duration: 0.5,
-      type: spring,
-      stiffness: 100,
-      damping: 30,
-      restDelta: 0.001
     }
   }
 }
@@ -71,7 +65,7 @@ export default function Venue() {
         h="10%"
         // bg="blue"
 
-        //ANIMATIONS
+        ANIMATIONS
         variants={welcomeTextMations}
         initial="hidden"
         whileInView="visible"

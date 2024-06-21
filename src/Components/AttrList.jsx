@@ -1,7 +1,6 @@
 import theStage from "../assets/stage_1.webp"
 import diyCocktail from "../assets/diy_bar.webp"
 import immersCorner from "../assets/immersion_corner.webp"
-import foodVendors from "../assets/foodVendors.webp"
 import photoBooth1 from "../assets/photobooth_1.webp"
 import photoBooth2 from "../assets/photobooth_2.webp"
 import photoBooth3 from "../assets/photobooth_3.webp"
@@ -18,7 +17,7 @@ export const AttrList = [
         id: 1,
         title: "THE STAGE",
         image: theStage,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
+        description: "Delight in thrilling performances from Bandhitz, amazing illusions from Precious the Magician and relaxing sounds from DJ Soul Yin. With special appearance from Tena Violinist. Join us for an unforgettable experience filled with fun and entertainment.",
         showDesc: true,
         showForm: false,
         posLeft: "15%",
@@ -28,7 +27,7 @@ export const AttrList = [
         id: 2,
         title: "DIY COCKTAIL",
         image: diyCocktail,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
+        description: "Link-up with our world-class bartenders, as they craft custom drinks of your choice. Reserve your slot at the cocktail stand with the button below.",
         showDesc: true,
         showForm: true,
         posLeft: "10%",
@@ -38,7 +37,7 @@ export const AttrList = [
         id: 3,
         title: "IMMERSION CORNER",
         image: immersCorner,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
+        description: "Embark on a journey with us and uncover hidden secrets, then explore and answer the question: 'How do you Singleton?'",
         showDesc: true,
         showForm: false,
         posLeft: "50%",
@@ -46,16 +45,6 @@ export const AttrList = [
     },
     {
         id: 4,
-        title: "FOOD VENDORS",
-        image: foodVendors,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nisi eos in laudantium libero nostrum, quod tenetur placeat laboriosam ipsa voluptate sunt cumque consequatur quaerat harum ex perspiciatis tempora sapiente debitis quo! Repellendus harum veritatis, commodi exercitationem minima tenetur vel fugit quae saepe quisquam iste eligendi. Quam aliquam doloribus quae?",
-        showDesc: true,
-        showForm: false,
-        posLeft: "70%",
-        posTop: "75%"
-    },
-    {
-        id: 5,
         title: "PHOTO BOOTH 1",
         image: photoBooth1,
         description: "",
@@ -65,7 +54,7 @@ export const AttrList = [
         posTop: "22%"
     },
     {
-        id: 6,
+        id: 5,
         title: "PHOTO BOOTH 3",
         image: photoBooth3,
         description: "",
@@ -75,7 +64,7 @@ export const AttrList = [
         posTop: "50%"
     },
     {
-        id: 7,
+        id: 6,
         title: "PHOTO BOOTH 2",
         image: photoBooth2,
         description: "",
@@ -85,7 +74,7 @@ export const AttrList = [
         posTop: "70%"
     },
     {
-        id: 8,
+        id: 7,
         title: "POLARIS PHOTO BOOTH",
         image: photoPolaris,
         description: "",
@@ -95,41 +84,41 @@ export const AttrList = [
         posTop: "90%"
     },
     {
-        id: 9,
+        id: 8,
         title: "MAIN BAR",
         image: mainBar,
-        description: "",
-        showDesc: false,
+        description: "Indulge in the finest cocktails that The Singleton has to offer and savor every moment.",
+        showDesc: true,
         showForm: false,
         posLeft: "30%",
         posTop: "72%"
     },
     {
-        id: 10,
+        id: 9,
         title: "ENTRANCE GANTRY",
         image: entrance,
-        description: "",
-        showDesc: false,
+        description: "The journey begins here.",
+        showDesc: true,
         showForm: false,
-        posLeft: "77%",
+        posLeft: "72%",
         posTop: "40%"
     },
     {
-        id: 11,
+        id: 10,
         title: "ACCREDITATION",
         image: accredit,
-        description: "",
-        showDesc: false,
+        description: "Get accredited and redeem your drink vouchers. A little something to kickstart the party awaits you.",
+        showDesc: true,
         showForm: false,
         posLeft: "77%",
         posTop: "22%"
     },
     {
-        id: 12,
+        id: 11,
         title: "PUZZLE WALL",
         image: puzzleWall,
-        description: "",
-        showDesc: false,
+        description: "Ready for a challenge? Solve our puzzles and win amazing prizes.",
+        showDesc: true,
         showForm: false,
         posLeft: "63%",
         posTop: "30%"
